@@ -1,1 +1,2 @@
 replicas: 1
+dockerImageTag: "58177af8c200bffc61426bb3845c49b7e3e6a85f"

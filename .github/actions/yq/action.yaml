@@ -8,6 +8,4 @@ runs:
   using: 'docker'
   image: 'mikefarah/yq:4'
   args:
-  - sh
-  - -c
   - ${{ inputs.command }}

@@ -17,8 +17,9 @@ jobs:
       - name: Update service version in target file
         uses: ./.github/actions/yq
         with:
-          command: |
-            eval -i '.dockerImageTag = "${{ github.event.client_payload.sha8 }}" | .dockerImageTag tag = "!!str"' ./values-dev.yaml 
+          expression: |
+            '.dockerImageTag = "${{ github.event.client_payload.sha8 }}" | .dockerImageTag tag = "!!str"'
+          file: ./values-dev.yaml 
       - name: Create Pull Request
         id: createpr
         uses: peter-evans/create-pull-request@v3

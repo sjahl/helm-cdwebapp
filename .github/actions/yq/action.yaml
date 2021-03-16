@@ -8,4 +8,7 @@ runs:
   using: 'docker'
   image: 'mikefarah/yq:4'
   args:
-  - ${{ inputs.command }}
+  - eval
+  - -i
+  - ${{ inputs.expression }}
+  - ${{ inputs.file }}

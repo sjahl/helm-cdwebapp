@@ -13,5 +13,5 @@ runs:
   args:
   - eval
   - -i
-  - ${{ inputs.expression }}
+  - '${{ inputs.expression }}'
   - ${{ inputs.file }}

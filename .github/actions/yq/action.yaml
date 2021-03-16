@@ -1,8 +1,11 @@
 name: 'yq'
 description: 'Run a yq command'
 inputs:
-  command:
-    description: 'yq command to run'
+  expression:
+    description: 'yq expression to eval'
+    required: true
+  file:
+    description: 'path to the file yq should modify'
     required: true
 runs:
   using: 'docker'

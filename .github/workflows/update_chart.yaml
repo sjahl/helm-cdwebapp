@@ -9,7 +9,7 @@ jobs:
   verify-connection:
     runs-on: ubuntu-latest
     steps:
-      - name: lima sierra
+      - name: lima charlie
         id: echo
         run: echo ${{ github.event.client_payload.sha8 }}
       - name: checkout repo

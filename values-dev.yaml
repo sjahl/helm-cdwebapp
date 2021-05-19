@@ -1,2 +1,2 @@
-replicas: 1
-dockerImageTag: "ed9b576"
+replicas: 3
+dockerImageTag: "1a9445e"

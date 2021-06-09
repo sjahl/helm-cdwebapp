@@ -1,19 +1,20 @@
-# apiVersion: batch/v1
-# kind: Job
-# metadata:
-#   generateName: testing-an-echo
-#   annotations:
-#     argocd.argoproj.io/hook: PreSync
-#     argocd.argoproj.io/hook-delete-policy: HookSucceeded
-# spec:
-#   template:
-#       spec:
-#         containers:
-#         - name: echo-message
-#           image: ubuntu:20.04
-#           command:
-#             - "echo"
-#             - "-n"
-#             - "testing job hooks in argocd!"
-#         restartPolicy: Never
-#   backoffLimit: 2
+apiVersion: batch/v1
+kind: Job
+metadata:
+  name: {{ .Release.Name }}
+  annotations:
+    helm.sh/hook: pre-install, pre-upgrade
+    helm.sh/hook-weight: "-1"
+    helm.sh/hook-delete-policy: before-hook-creation
+spec:
+  template:
+      spec:
+        containers:
+        - name: echo-message
+          image: ubuntu:20.04
+          command:
+            - "echo"
+            - "-n"
+            - "testing job hooks in argocd!"
+        restartPolicy: Never
+  backoffLimit: 2

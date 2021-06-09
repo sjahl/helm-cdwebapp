@@ -17,6 +17,7 @@ spec:
             - "-n"
             - "testing job hooks in argocd!"
             - "&&"
-            - "sleep 30"
+            - "sleep"
+            - "30"
         restartPolicy: Never
   backoffLimit: 2

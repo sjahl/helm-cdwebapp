@@ -13,10 +13,6 @@ spec:
         - name: echo-message
           image: ubuntu:20.04
           command:
-            - "echo"
-            - "-n"
-            - "testing job hooks in argocd!"
-            - "&&"
             - "sleep"
             - "30"
         restartPolicy: Never

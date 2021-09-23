@@ -17,7 +17,7 @@ spec:
       - name: docker-hub
       containers:
       - name: cdwebapp
-        image: stephenjahl/cdwebapp:{{ .Values.dockerImageTag }}
+        image: {{ .Values.dockerImageRepo }}:{{ .Values.dockerImageTag }}
         imagePullPolicy: Always
         ports:
         - containerPort: 8081

@@ -8,4 +8,5 @@ pizzaToppings:
   - peppers
   - onions
 
+dockerImageRepo: us-central1-docker.pkg.dev/tgg-sre-testing/tgg-skaffold-doodads/cdwebapp
 dockerImageTag: latest

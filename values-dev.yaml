@@ -1,1 +1,2 @@
 replicas: 3
+imageKey: us-central1-docker.pkg.dev/tgg-sre-testing/tgg-skaffold-doodads/cdwebapp:v2

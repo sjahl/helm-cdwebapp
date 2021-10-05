@@ -1,23 +1,21 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: cdwebapp
+  name: {{ .Release.Name }}
 spec:
   replicas: {{ .Values.replicas }}
   revisionHistoryLimit: 2
   selector:
     matchLabels:
-      app: cdwebapp
+      app: {{ .Release.Name }}
   template:
     metadata:
       labels:
-        app: cdwebapp
+        app: {{ .Release.Name }}
     spec:
-      imagePullSecrets:
-      - name: docker-hub
       containers:
       - name: cdwebapp
-        image: {{ .Values.dockerImageRepo }}:{{ .Values.dockerImageTag }}
+        image: {{ .Values.imageKey }}
         imagePullPolicy: Always
         ports:
         - containerPort: 8081

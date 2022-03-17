@@ -14,12 +14,14 @@ jobs:
         run: echo ${{ github.event.client_payload.sha8 }}
       - name: checkout repo
         uses: actions/checkout@v2
-      - name: Update service version in target file
-        uses: ./.github/actions/yq
+      - name: Update docker image tag in target file
+        uses: mikefarah/yq@v4.22.1
         with:
-          expression: |
-            .image.tag = "${{ github.event.client_payload.sha8 }}"| .image.tag tag = "!!str" | .image.tag style="double"
-          file: ./values.yaml
+          cmd: >
+            yq - i .image.tag = "${{ github.event.client_payload.sha8 }}"
+            | .image.tag tag = "!!str"
+            | .image.tag style="double"
+            '${{ github_event.client_payload.target_file }}'
       - name: Create Pull Request
         id: createpr
         uses: peter-evans/create-pull-request@v3

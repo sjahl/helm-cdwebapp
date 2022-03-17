@@ -19,7 +19,7 @@ jobs:
         with:
           expression: |
             .image.tag = "${{ github.event.client_payload.sha8 }}"| .image.tag tag = "!!str" | .image.tag style="double"
-          file: ./values.yaml 
+          file: ./values.yaml
       - name: Create Pull Request
         id: createpr
         uses: peter-evans/create-pull-request@v3

@@ -10,6 +10,7 @@ inputs:
 runs:
   using: 'docker'
   image: 'mikefarah/yq:4'
+  options: --user 1001
   args:
   - -i
   - '${{ inputs.expression }}'

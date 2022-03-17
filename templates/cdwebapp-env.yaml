@@ -1,0 +1,13 @@
+{{- if .Values.manage_environment }}
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: {{ .Release.Name }}-env
+  labels:
+    app.kubernetes.io/name: cdwebapp
+    app.kubernetes.io/instance: {{ .Release.Name }}
+data:
+{{- with .Values.environment }}
+  {{- toYaml . | nindent 2 }}
+{{- end }}
+{{- end }}

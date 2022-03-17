@@ -8,4 +8,9 @@ pizzaToppings:
   - peppers
   - onions
 
-imageKey: us-central1-docker.pkg.dev/tgg-sre-testing/tgg-skaffold-doodads/cdwebapp:latest
+image:
+  repository: us-central1-docker.pkg.dev/tgg-sre-testing/tgg-testing-cdwebapp/cdwebapp
+  tag: v1.0.0
+  pullPolicy: IfNotPresent
+
+manage_environment: false

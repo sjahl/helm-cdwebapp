@@ -3,10 +3,10 @@ kind: Service                    # Type of kubernetes resource
 metadata:
   name: cdwebapp
 spec:
-  type: NodePort                 # Expose the Pods by opening a port on each Node and proxing it to the service.
+  type: ClusterIP
   ports:                         # Take incoming HTTP requests on port 9090 and forward them to the targetPort of 8080
   - name: http
     port: 9090
     targetPort: 8081
   selector:
-    app: cdwebapp
+    app: {{ .Release.Name }}

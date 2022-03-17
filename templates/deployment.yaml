@@ -12,11 +12,26 @@ spec:
     metadata:
       labels:
         app: {{ .Release.Name }}
+      {{- if .Values.manage_environment }}
+      annotations:
+        checksum/config:  {{ include (print $.Template.BasePath "/cdwebapp-env.yaml") . | sha256sum }}
+      {{- end }}
     spec:
       containers:
       - name: cdwebapp
-        image: {{ .Values.imageKey }}
-        imagePullPolicy: Always
+        image: {{ .Values.image.repository }}:{{ .Values.image.tag }}
+        imagePullPolicy: {{ .Values.image.pullPolicy }}
+        envFrom:
+        - configMapRef:
+            name: {{ .Release.Name }}-env
+        command: ["/bin/sh"]
+        args: ["-c", "sleep 45 && ./cdwebapp"]
+        readinessProbe:
+          periodSeconds: 30
+          successThreshold: 1
+          httpGet:
+            path: /
+            port: 8081
         ports:
         - containerPort: 8081
   # strategy:

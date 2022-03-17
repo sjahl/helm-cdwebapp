@@ -18,9 +18,9 @@ jobs:
         uses: mikefarah/yq@v4.22.1
         with:
           cmd: >
-            yq -i .image.tag = "${{ github.event.client_payload.sha8 }}"
+            yq -i '.image.tag = "${{ github.event.client_payload.sha8 }}"
             | .image.tag tag = "!!str"
-            | .image.tag style="double"
+            | .image.tag style="double"'
             '${{ github.event.client_payload.target_file }}'
       - name: Create Pull Request
         id: createpr

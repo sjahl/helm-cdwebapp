@@ -21,7 +21,7 @@ jobs:
             yq - i .image.tag = "${{ github.event.client_payload.sha8 }}"
             | .image.tag tag = "!!str"
             | .image.tag style="double"
-            '${{ github_event.client_payload.target_file }}'
+            '${{ github.event.client_payload.target_file }}'
       - name: Create Pull Request
         id: createpr
         uses: peter-evans/create-pull-request@v3

@@ -1,4 +1,3 @@
-# Testing what happens when I add a comment
 apiVersion: apps/v1
 kind: Deployment
 metadata:

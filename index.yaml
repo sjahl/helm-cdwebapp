@@ -1,0 +1,14 @@
+apiVersion: v1
+entries:
+  cdwebapp:
+  - apiVersion: v2
+    appVersion: 0.0.1
+    created: "2022-04-12T18:47:21.003894587Z"
+    description: A Helm chart for cdwebapp
+    digest: c034dd496f03ade1b128f2e4376fb17bb14b7e331ec5b1518162e3cd5e3f707d
+    name: cdwebapp
+    type: application
+    urls:
+    - https://github.com/sjahl/helm-cdwebapp/releases/download/cdwebapp-0.1.1/cdwebapp-0.1.1.tgz
+    version: 0.1.1
+generated: "2022-04-12T18:47:21.003904387Z"

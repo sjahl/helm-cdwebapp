@@ -9,6 +9,6 @@ pizzaToppings:
   - onions
 image:
   repository: us-central1-docker.pkg.dev/tgg-sre-testing/tgg-testing-cdwebapp/cdwebapp
-  tag: "a9d8fc0"
+  tag: "c15af7d"
   pullPolicy: IfNotPresent
 manage_environment: false

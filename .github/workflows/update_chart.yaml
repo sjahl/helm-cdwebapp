@@ -26,9 +26,9 @@ jobs:
         id: createpr
         uses: peter-evans/create-pull-request@v3
         with:
-          token: ${{ secrets.PR_TOKEN }}
+          token: ${{ secrets.GITHUB_TOKEN }}
           commit-message: Update docker image tag
-          committer: sjahl <sjahl@broadinstitute.org>
+          committer: ${{ github.actor }} <${{ github.actor }}@users.noreply.github.com>
           author: ${{ github.actor }} <${{ github.actor }}@users.noreply.github.com>
           labels: automation
       - name: Check outputs

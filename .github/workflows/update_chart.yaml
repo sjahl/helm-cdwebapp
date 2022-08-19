@@ -31,6 +31,7 @@ jobs:
           committer: ${{ github.actor }} <${{ github.actor }}@users.noreply.github.com>
           author: ${{ github.actor }} <${{ github.actor }}@users.noreply.github.com>
           labels: automation
+          title: "Update ${{ github.event.client_payload.target_file }} to image.tag ${{ github.event.client_payload.sha8 }}" 
       - name: Check outputs
         run: |
           echo "Pull Request Number - ${{ steps.createpr.outputs.pull-request-number }}"

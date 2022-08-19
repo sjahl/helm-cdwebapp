@@ -7,10 +7,8 @@ pizzaToppings:
   - cheese
   - peppers
   - onions
-
 image:
   repository: us-central1-docker.pkg.dev/tgg-sre-testing/tgg-testing-cdwebapp/cdwebapp
-  tag: v1.0.0
+  tag: "629c05b"
   pullPolicy: IfNotPresent
-
 manage_environment: false
